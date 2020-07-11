@@ -107,14 +107,44 @@
                                     <action selector="Close:" destination="r9W-DS-VI8" eventType="touchUpInside" id="ytI-tq-lJR"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mXk-qo-NhX">
+                                <rect key="frame" x="60" y="100" width="294" height="420"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mXk-qo-NhX" secondAttribute="height" multiplier="7:10" id="Ela-nT-RBX"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nkw-ko-OPR">
+                                <rect key="frame" x="168.5" y="600" width="77" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnf-6T-2Mu">
+                                <rect key="frame" x="161" y="666" width="92" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" systemColor="systemGray2Color" red="0.68235294120000001" green="0.68235294120000001" blue="0.69803921570000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="xnf-6T-2Mu" firstAttribute="top" secondItem="Nkw-ko-OPR" secondAttribute="bottom" constant="30" id="FG8-Bg-hvp"/>
+                            <constraint firstItem="mXk-qo-NhX" firstAttribute="centerX" secondItem="qrL-XR-J4k" secondAttribute="centerX" id="RA1-28-KCl"/>
+                            <constraint firstItem="mXk-qo-NhX" firstAttribute="top" secondItem="qrL-XR-J4k" secondAttribute="top" constant="100" id="Twl-rL-tlD"/>
+                            <constraint firstItem="Nkw-ko-OPR" firstAttribute="top" secondItem="mXk-qo-NhX" secondAttribute="bottom" constant="80" id="bTB-Wp-VLN"/>
                             <constraint firstItem="qrL-XR-J4k" firstAttribute="trailing" secondItem="eOF-Sa-21Y" secondAttribute="trailing" constant="25" id="hdJ-jO-c1O"/>
+                            <constraint firstItem="xnf-6T-2Mu" firstAttribute="centerX" secondItem="Nkw-ko-OPR" secondAttribute="centerX" id="l6K-HJ-H44"/>
+                            <constraint firstItem="Nkw-ko-OPR" firstAttribute="centerX" secondItem="mXk-qo-NhX" secondAttribute="centerX" id="pa7-dC-ynU"/>
+                            <constraint firstItem="mXk-qo-NhX" firstAttribute="leading" secondItem="qrL-XR-J4k" secondAttribute="leading" constant="60" id="rBq-r8-tlS"/>
                             <constraint firstItem="eOF-Sa-21Y" firstAttribute="top" secondItem="qrL-XR-J4k" secondAttribute="top" constant="25" id="xmG-35-qaG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qrL-XR-J4k"/>
                     </view>
+                    <connections>
+                        <outlet property="BountyLabel" destination="xnf-6T-2Mu" id="osf-59-wi9"/>
+                        <outlet property="ImageView" destination="mXk-qo-NhX" id="cFP-2U-vwE"/>
+                        <outlet property="NameLabel" destination="Nkw-ko-OPR" id="9HU-WZ-CXW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nAY-Ex-O6L" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
