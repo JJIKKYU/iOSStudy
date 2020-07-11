@@ -25,11 +25,13 @@ class DetailViewController: UIViewController {
     // > 뷰레이어에서 필요한 메서드 만들기
     // 모델 가지고 있기, BountyInfo 등
     
+    let viewModel = DetailViewModel()
+    
     @IBOutlet weak var ImageView : UIImageView!
     @IBOutlet weak var NameLabel : UILabel!;
     @IBOutlet weak var BountyLabel : UILabel!;
     
-    var bountyInfo : BountyInfo?
+//    var bountyInfo : BountyInfo?
     
 //    var Name : String?
 //    var Bounty : Int?
@@ -41,7 +43,7 @@ class DetailViewController: UIViewController {
     
     func UpdateUI() {
         
-        if let bountyInfo = self.bountyInfo {
+        if let bountyInfo = self.viewModel.bountyInfo {
             ImageView.image = bountyInfo.image
             NameLabel.text = bountyInfo.name
             BountyLabel.text = "\(bountyInfo.bounty)"
@@ -51,5 +53,13 @@ class DetailViewController: UIViewController {
     
     @IBAction func Close(_ sender: Any) {
         dismiss(animated: true, completion: nil)
+    }
+}
+
+class DetailViewModel {
+    var bountyInfo : BountyInfo?
+    
+    func update(model: BountyInfo?) {
+        bountyInfo = model;
     }
 }
