@@ -9,9 +9,33 @@
 import UIKit
 
 class BountyViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    // MVVM
 
-    let NameList = ["brook", "chopper", "franky", "luffy", "nami", "robin", "sanji", "zoro"]
-    let BountyList = [330000, 50, 440000, 300000, 160000, 800000, 770000, 120000]
+    // Model
+    // - BountyInfo
+    // > BountyInfo 만들자
+    
+    // View
+    // - ListCell
+    // > ListCell 필요한 정보를 ViewModel한테서 받아야겠다
+    // > ListCell은 ViewModel로 부터 받은 정보로 뷰 업데이트 하기
+    
+    // ViewModel
+    // - BountyViewModel
+    // - BountyViewModel을 만들고, 뷰레이어에서 필요한 메서드 만들기
+    // > 모델 가지고 있기 ,, BountyInfo 들
+    
+    let bountyInfoList : [BountyInfo] = [
+        BountyInfo(name: "brook", bounty: 33000),
+        BountyInfo(name: "chopper", bounty: 500),
+        BountyInfo(name: "franky", bounty: 4400),
+        BountyInfo(name: "luffy", bounty: 30000),
+        BountyInfo(name: "nami", bounty: 160000),
+        BountyInfo(name: "robin", bounty: 80000),
+        BountyInfo(name: "sanji", bounty: 70000),
+        BountyInfo(name: "zoro", bounty: 120000),
+    ]
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // DetailViewController 데이터 전송
@@ -19,8 +43,10 @@ class BountyViewController: UIViewController, UITableViewDataSource, UITableView
             let vc = segue.destination as? DetailViewController
             
             if let index = sender as? Int {
-                vc?.Name = NameList[index]
-                vc?.Bounty = BountyList[index]
+                
+                let bountyInfo = bountyInfoList[index]
+                
+                vc?.bountyInfo = bountyInfo
             }
         }
     }
@@ -31,7 +57,7 @@ class BountyViewController: UIViewController, UITableViewDataSource, UITableView
     
     // UITableView DataSource    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return BountyList.count;
+        return bountyInfoList.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -41,10 +67,11 @@ class BountyViewController: UIViewController, UITableViewDataSource, UITableView
             return UITableViewCell()
         }
         
-        let img = UIImage(named: "\(NameList[indexPath.row]).jpg")
-        cell.imageView?.image = img
-        cell.NameLabel.text = NameList[indexPath.row]
-        cell.BountyLabel.text = "\(BountyList[indexPath.row])"
+        let bountyInfo = bountyInfoList[indexPath.row]
+        
+        cell.imageView?.image = bountyInfo.image
+        cell.NameLabel.text = bountyInfo.name
+        cell.BountyLabel.text = "\(bountyInfo.bounty)"
         return cell
     }
     
@@ -64,5 +91,20 @@ class ListCell : UITableViewCell {
     
     func ListCell() {
         
+    }
+}
+
+
+struct BountyInfo {
+    let name : String
+    let bounty : Int
+    
+    var image : UIImage? {
+        return UIImage(named: "\(name).jpg")
+    }
+    
+    init(name: String, bounty: Int) {
+        self.name = name
+        self.bounty = bounty
     }
 }

@@ -9,12 +9,30 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    // MVVM
+
+    // Model
+    // - BountyInfo
+    // > BountyInfo 만들자
+    
+    // View
+    // - ImgView, NameLabel ListCell
+    // View들은 Viewodel을 통해서 구성되기 ?
+    
+    // ViewModel
+    // - BountyViewModel
+    // > 뷰레이어에서 필요한 메서드 만들기
+    // 모델 가지고 있기, BountyInfo 등
+    
     @IBOutlet weak var ImageView : UIImageView!
     @IBOutlet weak var NameLabel : UILabel!;
     @IBOutlet weak var BountyLabel : UILabel!;
     
-    var Name : String?
-    var Bounty : Int?
+    var bountyInfo : BountyInfo?
+    
+//    var Name : String?
+//    var Bounty : Int?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +41,11 @@ class DetailViewController: UIViewController {
     
     func UpdateUI() {
         
-        if let name = self.Name, let bounty = self.Bounty {
-            let img = UIImage(named: "\(name).jpg")
-            ImageView.image = img
-            NameLabel.text = name
-            BountyLabel.text = "\(bounty)"
+        if let bountyInfo = self.bountyInfo {
+            ImageView.image = bountyInfo.image
+            NameLabel.text = bountyInfo.name
+            BountyLabel.text = "\(bountyInfo.bounty)"
         }
-        
         
     }
     
