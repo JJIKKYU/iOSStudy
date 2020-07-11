@@ -14,6 +14,7 @@
 		9888D53524B9ABCA00B4C8E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9888D53424B9ABCA00B4C8E6 /* Assets.xcassets */; };
 		9888D53824B9ABCA00B4C8E6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9888D53624B9ABCA00B4C8E6 /* LaunchScreen.storyboard */; };
 		9888D54024B9AC2B00B4C8E6 /* BountyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9888D53F24B9AC2B00B4C8E6 /* BountyViewController.swift */; };
+		9888D54224B9B79B00B4C8E6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9888D54124B9B79B00B4C8E6 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		9888D53724B9ABCA00B4C8E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9888D53924B9ABCA00B4C8E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9888D53F24B9AC2B00B4C8E6 /* BountyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BountyViewController.swift; sourceTree = "<group>"; };
+		9888D54124B9B79B00B4C8E6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				9888D52824B9ABC700B4C8E6 /* AppDelegate.swift */,
 				9888D52A24B9ABC700B4C8E6 /* SceneDelegate.swift */,
 				9888D53F24B9AC2B00B4C8E6 /* BountyViewController.swift */,
+				9888D54124B9B79B00B4C8E6 /* DetailViewController.swift */,
 				9888D52E24B9ABC700B4C8E6 /* Main.storyboard */,
 				9888D53424B9ABCA00B4C8E6 /* Assets.xcassets */,
 				9888D53624B9ABCA00B4C8E6 /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				9888D53324B9ABC700B4C8E6 /* BountyList.xcdatamodeld in Sources */,
 				9888D54024B9AC2B00B4C8E6 /* BountyViewController.swift in Sources */,
+				9888D54224B9B79B00B4C8E6 /* DetailViewController.swift in Sources */,
 				9888D52924B9ABC700B4C8E6 /* AppDelegate.swift in Sources */,
 				9888D52B24B9ABC700B4C8E6 /* SceneDelegate.swift in Sources */,
 			);
