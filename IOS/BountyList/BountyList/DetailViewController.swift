@@ -30,6 +30,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var ImageView : UIImageView!
     @IBOutlet weak var NameLabel : UILabel!;
     @IBOutlet weak var BountyLabel : UILabel!;
+    @IBOutlet weak var BountyLabelCenterX: NSLayoutConstraint!
+    @IBOutlet weak var NameLabelCenterX: NSLayoutConstraint!
     
 //    var bountyInfo : BountyInfo?
     
@@ -39,7 +41,33 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         UpdateUI()
+        PrepareAnimation()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        ShowAnimation()
+        
+    }
+    
+    func PrepareAnimation() {
+        NameLabelCenterX.constant = view.bounds.width
+        BountyLabelCenterX.constant = view.bounds.width
+    }
+    
+    func ShowAnimation() {
+        NameLabelCenterX.constant = 0
+        BountyLabelCenterX.constant = 0
+        
+//        UIView.animate(withDuration: 0.3) {
+//            self.view.layoutIfNeeded()
+//        }
+        
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
     
     func UpdateUI() {
         
