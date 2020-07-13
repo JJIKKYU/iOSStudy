@@ -86,7 +86,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="r9W-DS-VI8" kind="presentation" identifier="ShowDetail" id="kp7-UL-BpT"/>
+                        <segue destination="r9W-DS-VI8" kind="push" identifier="ShowDetail" id="kp7-UL-BpT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -145,6 +145,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qrL-XR-J4k"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Hxp-3y-NaN"/>
                     <connections>
                         <outlet property="BountyLabel" destination="xnf-6T-2Mu" id="osf-59-wi9"/>
                         <outlet property="BountyLabelCenterX" destination="l6K-HJ-H44" id="mKg-SS-Uxw"/>
