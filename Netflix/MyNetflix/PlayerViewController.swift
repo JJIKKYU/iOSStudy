@@ -23,14 +23,39 @@ class PlayerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        PlayerView.player = player
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        play()
     }
     
     @IBAction func togglePlaybutton(_ sender: Any) {
-        PlayButton.isSelected = !PlayButton.isSelected
-        
+        if player.isPlaying {
+            pause()
+        } else {
+            play()
+        }
+    }
+    
+    func play() {
+        player.play()
+        PlayButton.isSelected = true
+    }
+    
+    func pause() {
+        player.pause()
+        PlayButton.isSelected = false
+    }
+    
+    func reset() {
+        pause()
+        player.replaceCurrentItem(with: nil)
     }
     
     @IBAction func closeButtonTapped(_ sender: Any) {
+        reset()
         dismiss(animated: false, completion: nil)
     }
 }
