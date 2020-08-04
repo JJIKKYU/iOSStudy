@@ -56,7 +56,7 @@ extension SearchViewController : UICollectionViewDelegate {
         // presenting player vc
         
         let movie = movies[indexPath.item]
-        let url = URL(string: movie.previewURL)
+        let url = URL(string: movie.previewURL)!
         let item = AVPlayerItem(url: url)
         
         let sb = UIStoryboard(name: "Player", bundle: nil)

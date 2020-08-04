@@ -41,12 +41,34 @@ class HomeViewController: UIViewController {
     
 
     @IBAction func playButtonTapped(_ sender: Any) {
+        
+        // Interstella에 대한 정보를 검색 API로 가져온다
+        // 거기서 Interstella 객체 하나를 가져온다
+        // 그 객체를 이용해서 PlayerViewController를 띄운다
+        
+        SearchAPI.search("interstella") { movies in
+            guard let interstella = movies.first else { return }
+            
+            DispatchQueue.main.async {
+                let url = URL(string: interstella.previewURL)!
+                let item = AVPlayerItem(url: url)
+                
+                let sb = UIStoryboard(name: "Player", bundle: nil)
+                let vc = sb.instantiateViewController(identifier: "PlayerViewController") as! PlayerViewController
+                vc.player.replaceCurrentItem(with: item)
+                
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: false, completion: nil)
+            }
+        }
+        
+        
 //        SearchAPI.search("interstella") { movies in
 //            guard let interstella = movies.first else { return }
 //            DispatchQueue.main.async {
 //                let url = URL(string: interstella.previewURL)!
 //                let item = AVPlayerItem(url: url)
-//                
+//
 //                let sb = UIStoryboard(name: "Player", bundle: nil)
 //                let vc = sb.instantiateViewController(identifier: "PlayerViewController") as! PlayerViewController
 //                vc.modalPresentationStyle = .fullScreen
