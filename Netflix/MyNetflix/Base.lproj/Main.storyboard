@@ -248,14 +248,39 @@
                     <view key="view" contentMode="scaleToFill" id="ce7-Bh-AkS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ox1-nx-T4m">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAB-TT-lwZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="FAB-TT-lwZ" firstAttribute="leading" secondItem="ox1-nx-T4m" secondAttribute="leading" id="Rf5-yS-u0e"/>
+                                    <constraint firstItem="FAB-TT-lwZ" firstAttribute="top" secondItem="ox1-nx-T4m" secondAttribute="top" id="TC3-SL-oaz"/>
+                                    <constraint firstAttribute="bottom" secondItem="FAB-TT-lwZ" secondAttribute="bottom" id="amV-9q-YtB"/>
+                                    <constraint firstAttribute="trailing" secondItem="FAB-TT-lwZ" secondAttribute="trailing" id="vk8-uV-M9Q"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ox1-nx-T4m" firstAttribute="top" secondItem="cEW-rw-DWC" secondAttribute="top" id="AeR-wF-DlP"/>
+                            <constraint firstItem="ox1-nx-T4m" firstAttribute="leading" secondItem="cEW-rw-DWC" secondAttribute="leading" id="PP5-3b-RfZ"/>
+                            <constraint firstItem="cEW-rw-DWC" firstAttribute="trailing" secondItem="ox1-nx-T4m" secondAttribute="trailing" id="Ts5-6p-pp7"/>
+                            <constraint firstItem="cEW-rw-DWC" firstAttribute="bottom" secondItem="ox1-nx-T4m" secondAttribute="bottom" id="Vjy-gx-mUc"/>
+                            <constraint firstItem="FAB-TT-lwZ" firstAttribute="width" secondItem="ce7-Bh-AkS" secondAttribute="width" id="eZe-jI-k2N"/>
+                            <constraint firstItem="FAB-TT-lwZ" firstAttribute="height" secondItem="ce7-Bh-AkS" secondAttribute="height" priority="250" id="q90-Yb-rnr"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="cEW-rw-DWC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="공개예정" image="play.rectangle.fill" catalog="system" id="pxU-OE-cdZ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J18-X4-5SI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3001" y="990"/>
+            <point key="canvasLocation" x="3000.0000000000005" y="989.73214285714278"/>
         </scene>
         <!--더보기-->
         <scene sceneID="Lca-zO-Qyt">
