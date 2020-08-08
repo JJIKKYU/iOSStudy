@@ -246,15 +246,44 @@
             <objects>
                 <viewController id="Blf-Or-i5j" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ce7-Bh-AkS">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ox1-nx-T4m">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1473"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FAB-TT-lwZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1600"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hhE-il-ckc">
+                                                <rect key="frame" x="16" y="20" width="382" height="300"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="2rh-7l-Vmi"/>
+                                                </constraints>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="g7K-w2-6Qb">
+                                                <rect key="frame" x="16" y="328" width="382" height="600"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AJg-RA-I5f">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="600"/>
+                                                        <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="600" id="9wp-Uw-zY9"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="g7K-w2-6Qb" secondAttribute="trailing" constant="16" id="Asy-fG-ODp"/>
+                                            <constraint firstItem="g7K-w2-6Qb" firstAttribute="leading" secondItem="FAB-TT-lwZ" secondAttribute="leading" constant="16" id="Cau-iN-1YT"/>
+                                            <constraint firstAttribute="trailing" secondItem="hhE-il-ckc" secondAttribute="trailing" constant="16" id="Hq0-sW-Uvh"/>
+                                            <constraint firstItem="g7K-w2-6Qb" firstAttribute="top" secondItem="hhE-il-ckc" secondAttribute="bottom" constant="8" id="a7Q-s7-Ntj"/>
+                                            <constraint firstItem="hhE-il-ckc" firstAttribute="top" secondItem="FAB-TT-lwZ" secondAttribute="top" constant="20" id="afe-eK-xZp"/>
+                                            <constraint firstItem="hhE-il-ckc" firstAttribute="leading" secondItem="FAB-TT-lwZ" secondAttribute="leading" constant="16" id="lyU-eN-dZ8"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -277,6 +306,7 @@
                         <viewLayoutGuide key="safeArea" id="cEW-rw-DWC"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="공개예정" image="play.rectangle.fill" catalog="system" id="pxU-OE-cdZ"/>
+                    <size key="freeformSize" width="414" height="1600"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J18-X4-5SI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
