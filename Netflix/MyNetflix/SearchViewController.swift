@@ -1,11 +1,3 @@
-//
-//  SearchViewController.swift
-//  MyNetflix
-//
-//  Created by joonwon lee on 2020/04/02.
-//  Copyright © 2020 com.joonwon. All rights reserved.
-//
-
 import UIKit
 import Kingfisher
 import AVFoundation
