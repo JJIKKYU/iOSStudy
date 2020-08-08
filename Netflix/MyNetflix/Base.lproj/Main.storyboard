@@ -244,7 +244,7 @@
         <!--공개예정-->
         <scene sceneID="ryf-ci-vYK">
             <objects>
-                <viewController id="Blf-Or-i5j" sceneMemberID="viewController">
+                <viewController id="Blf-Or-i5j" customClass="UpComingViewController" customModule="MyNetflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ce7-Bh-AkS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -270,7 +270,7 @@
                                                             <constraint firstAttribute="height" constant="200" id="u2h-78-YgW"/>
                                                         </constraints>
                                                         <connections>
-                                                            <segue destination="OfK-HO-EIm" kind="embed" id="7cl-CT-Ymg"/>
+                                                            <segue destination="OfK-HO-EIm" kind="embed" identifier="award" id="7cl-CT-Ymg"/>
                                                         </connections>
                                                     </containerView>
                                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PfE-NE-Vj3">
@@ -279,7 +279,7 @@
                                                             <constraint firstAttribute="height" constant="200" id="tOW-Zl-4PF"/>
                                                         </constraints>
                                                         <connections>
-                                                            <segue destination="S1b-Dd-xm9" kind="embed" id="KpO-9v-vEN"/>
+                                                            <segue destination="S1b-Dd-xm9" kind="embed" identifier="hot" id="KpO-9v-vEN"/>
                                                         </connections>
                                                     </containerView>
                                                 </subviews>
@@ -344,18 +344,62 @@
         <!--저장한 콘텐츠 목록-->
         <scene sceneID="G3y-va-xMY">
             <objects>
-                <viewController id="0DL-kq-S35" sceneMemberID="viewController">
+                <viewController id="0DL-kq-S35" customClass="HistoryViewController" customModule="MyNetflix" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="P9C-bK-D6z">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tyP-3E-ksc">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="86" id="hKc-uC-Jgc" customClass="HistoryCell" customModule="MyNetflix" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="86"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hKc-uC-Jgc" id="T7O-0N-vBE">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HistroySearchTerm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTk-Gg-g0c">
+                                                    <rect key="frame" x="16" y="32.5" width="145.5" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ZTk-Gg-g0c" firstAttribute="leading" secondItem="T7O-0N-vBE" secondAttribute="leading" constant="16" id="Aj6-Jy-WwB"/>
+                                                <constraint firstItem="ZTk-Gg-g0c" firstAttribute="centerY" secondItem="T7O-0N-vBE" secondAttribute="centerY" id="MkH-49-3pM"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="searchTerm" destination="ZTk-Gg-g0c" id="nRo-LG-xAR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="0DL-kq-S35" id="gPX-qP-Q5X"/>
+                                    <outlet property="delegate" destination="0DL-kq-S35" id="Wui-ll-o0N"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="OYX-Ro-fRu" firstAttribute="trailing" secondItem="tyP-3E-ksc" secondAttribute="trailing" id="1n3-zF-f1a"/>
+                            <constraint firstItem="tyP-3E-ksc" firstAttribute="leading" secondItem="OYX-Ro-fRu" secondAttribute="leading" id="8zn-vl-MfA"/>
+                            <constraint firstItem="OYX-Ro-fRu" firstAttribute="bottom" secondItem="tyP-3E-ksc" secondAttribute="bottom" id="bvQ-dV-3D6"/>
+                            <constraint firstItem="tyP-3E-ksc" firstAttribute="top" secondItem="OYX-Ro-fRu" secondAttribute="top" id="q5b-kz-AVh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="OYX-Ro-fRu"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="저장한 콘텐츠 목록" image="square.and.arrow.down.fill" catalog="system" id="o4B-qf-7ZJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="tyP-3E-ksc" id="ov0-Ze-eCg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igm-fa-Xmf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4877" y="990"/>
+            <point key="canvasLocation" x="4876.811594202899" y="989.73214285714278"/>
         </scene>
         <!--Recommend List View Controller-->
         <scene sceneID="4xS-pn-Mnp">
@@ -639,6 +683,7 @@
                             <constraint firstItem="QOf-Bn-lqv" firstAttribute="leading" secondItem="5L3-gl-Nps" secondAttribute="leading" constant="6" id="S9S-zb-ROf"/>
                             <constraint firstItem="deH-Qv-yO3" firstAttribute="leading" secondItem="5L3-gl-Nps" secondAttribute="leading" constant="6" id="WGn-zc-NzX"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="1xD-wR-nE5"/>
                     </view>
                     <connections>
                         <outlet property="sectionTitle" destination="deH-Qv-yO3" id="7ib-75-llV"/>
@@ -711,6 +756,7 @@
                             <constraint firstItem="SSU-Hc-CXA" firstAttribute="trailing" secondItem="tVA-xy-Ocg" secondAttribute="trailing" id="Ucp-Tt-D1O"/>
                             <constraint firstItem="pZr-iz-ySC" firstAttribute="leading" secondItem="tVA-xy-Ocg" secondAttribute="leading" constant="6" id="jGC-XM-HbW"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="FE7-pb-eBr"/>
                     </view>
                     <connections>
                         <outlet property="sectionTitle" destination="pZr-iz-ySC" id="hL0-HI-uBU"/>
