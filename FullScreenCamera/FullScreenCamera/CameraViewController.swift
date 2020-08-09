@@ -24,7 +24,7 @@ class CameraViewController: UIViewController {
     let photoOutput = AVCapturePhotoOutput()
     
     let sessionQueue = DispatchQueue(label: "session Queue")
-    let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInTripleCamera, .builtInWideAngleCamera, .builtInTrueDepthCamera], mediaType: .video, position: .back)
+    let videoDeviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInDualCamera, .builtInTripleCamera, .builtInWideAngleCamera, .builtInTrueDepthCamera], mediaType: .video, position: .unspecified)
     
 
     @IBOutlet weak var photoLibraryButton: UIButton!
@@ -49,6 +49,32 @@ class CameraViewController: UIViewController {
         setupUI()
     }
     
+    // 터치할 경우 포커스와 노출을 맞춤
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let screenSize = previewView.bounds.size
+        if let touchPoint = touches.first {
+            let x = touchPoint.location(in: previewView).y / screenSize.height
+            let y = 1.0 - touchPoint.location(in: previewView).x / screenSize.width
+            let focusPoint = CGPoint(x: x, y: y)
+            
+            sessionQueue.async {
+                let device = self.videoDeviceInput.device;
+                do {
+                    try device.lockForConfiguration()
+                    device.focusPointOfInterest = focusPoint
+                    device.focusMode = .autoFocus
+                    device.exposurePointOfInterest = focusPoint
+                    device.exposureMode = .continuousAutoExposure
+                    device.unlockForConfiguration()
+                    
+                } catch {
+                    
+                }
+                
+            }
+        }
+    }
+    
     func setupUI() {
         photoLibraryButton.layer.cornerRadius = 10
         photoLibraryButton.layer.masksToBounds = true
@@ -65,15 +91,73 @@ class CameraViewController: UIViewController {
     
     @IBAction func switchCamera(sender: Any) {
         // TODO: 카메라는 1개 이상이어야함
-        
+        guard videoDeviceDiscoverySession.devices.count > 1 else { return }
         
         // TODO: 반대 카메라 찾아서 재설정
+        // - 반대 카메라 찾고
+        // - 새로운 디바이스를 가지고 Session을 업데이트
+        // - 카메라 토글 버튼 업데이트
+        
+        sessionQueue.async {
+            let currentVideoDevice = self.videoDeviceInput.device
+            let currentPosition = currentVideoDevice.position
+            let isFront = currentPosition == .front
+            let preferredPosition : AVCaptureDevice.Position = isFront ? .back : .front
+            
+            let devices = self.videoDeviceDiscoverySession.devices
+            var newVideoDevice : AVCaptureDevice?
+            
+            newVideoDevice = devices.first(where: { (device) in
+                return preferredPosition == device.position
+            })
+            
+            // updae capture session
+            
+            if let newDevice = newVideoDevice {
+                do {
+                    let videoDeviceInput = try AVCaptureDeviceInput(device: newDevice)
+                    self.captureSession.beginConfiguration()
+                    self.captureSession.removeInput(self.videoDeviceInput)
+                    
+                    // add new device input
+                    if self.captureSession.canAddInput(videoDeviceInput) {
+                        self.captureSession.addInput(videoDeviceInput)
+                        self.videoDeviceInput = videoDeviceInput
+                    } else {
+                        self.captureSession.addInput(self.videoDeviceInput)
+                    }
+                    
+                    self.captureSession.commitConfiguration()
+                    
+                    // UI는 메인 큐에서
+                    DispatchQueue.main.async {
+                        // 아이콘 업데이트
+                        self.updateSwitchCameraIcon(position: preferredPosition)
+                    }
+                    
+                } catch let error {
+                    print("error occred while creating device input : \(error.localizedDescription)")
+                }
+                
+            }
+            
+            
+        }
         
     }
     
     func updateSwitchCameraIcon(position: AVCaptureDevice.Position) {
         // TODO: Update ICON
-        
+        switch position {
+        case .front:
+            let image =  #imageLiteral(resourceName: "ic_camera_front")
+            switchButton.setImage(image, for: .normal)
+        case .back:
+            let image =  #imageLiteral(resourceName: "ic_camera_rear")
+            switchButton.setImage(image, for: .normal)
+        default:
+            break
+        }
         
     }
     
@@ -114,7 +198,9 @@ extension CameraViewController {
         do {
             let videodeviceInput = try AVCaptureDeviceInput(device: camera)
             if captureSession.canAddInput(videodeviceInput) {
-                    captureSession.addInput(videodeviceInput)
+                captureSession.addInput(videodeviceInput)
+                
+                self.videoDeviceInput = videodeviceInput
             } else {
                 captureSession.commitConfiguration()
                 return
@@ -130,6 +216,7 @@ extension CameraViewController {
         ])], completionHandler: nil)
         if captureSession.canAddOutput(photoOutput) {
             captureSession.addOutput(photoOutput)
+            
         } else {
             captureSession.commitConfiguration()
             return
