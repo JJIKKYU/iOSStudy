@@ -49,9 +49,17 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func pressedLoginBtn(_ sender: Any) {
-        self.viewModel.login()
+        self.viewModel.login { value in
+            print("\(value)를 받았습니다!")
+            if !value.isEmpty {
+                self.performSegue(withIdentifier: "OrderDetailVC", sender: sender)
+            }
+        }
     }
     
+    @IBAction func testBtn(_ sender: Any) {
+        self.performSegue(withIdentifier: "OrderDetailVC", sender: sender)
+    }
     /*
     // MARK: - Navigation
 
