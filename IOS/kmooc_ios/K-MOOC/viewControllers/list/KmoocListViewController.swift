@@ -2,6 +2,8 @@ import UIKit
 
 class KmoocListViewController: UITableViewController {
     @IBOutlet var viewModel: KmoocListViewModel!
+    
+    private var isRefreshing: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,8 +30,23 @@ class KmoocListViewController: UITableViewController {
             
             
         }
-        
+        setUpRefreshControl()
         viewModel.list()
+    }
+    
+    func setUpRefreshControl() {
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
+        isRefreshing = true
+    }
+    
+    @objc
+    func didRefresh() {
+        print("refresh")
+        if isRefreshing {
+            tableView.refreshControl?.endRefreshing()
+        }
+            
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

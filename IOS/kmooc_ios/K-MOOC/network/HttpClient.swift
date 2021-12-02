@@ -7,7 +7,10 @@ class HttpClient {
         self.baseUrl = baseUrl
     }
 
-    func getJson(path: String, params: [String: Any], completed: @escaping (Result<String, Error>) -> Void) {
+    func getJson(
+        path: String,
+        params: [String: Any],
+        completed: @escaping (Result<String, Error>) -> Void) {
         DispatchQueue.global(qos: .background).async {
             let queryParams = params.map { k, v in "\(k)=\(v)" }.joined(separator: "&")
 
