@@ -42,6 +42,7 @@ class KmoocListViewController: UITableViewController {
 }
 
 extension KmoocListViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("viewmodl.lectureCount = ", viewModel.lecturesCount())
         return viewModel.lecturesCount()
@@ -49,13 +50,34 @@ extension KmoocListViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: KmoocListItemTableViewCell.CellIdentifier) as! KmoocListItemTableViewCell
-        let lectureList = viewModel.lecture
-        cell.name = viewModel
+        
+        let data = viewModel.lectureList.lectures[indexPath.row]
+        
+        cell.name.text = data.name
+        cell.orgName.text = data.orgName
+        
+        ImageLoader.loadImage(url: data.courseImage) { image in
+            cell.thumbnail.image = image
+        }
+        
+        
+        cell.duration.text = "\(DateUtil.formatDate(data.start)) ~ \(DateUtil.formatDate(data.end))"
         return cell
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let lecture = viewModel.lecture(at: indexPath.row)
+        
         performSegue(withIdentifier: "KmoocDetail", sender: lecture)
     }
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if offsetY > contentHeight - scrollView.frame.height {
+            viewModel.next()
+        }
+    }
+    
 }

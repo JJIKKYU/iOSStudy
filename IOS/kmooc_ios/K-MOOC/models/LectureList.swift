@@ -4,7 +4,7 @@ struct LectureList: Codable {
     let count: Int
     let numPages: Int
     let previous: String
-    let next: String
+    var next: String
     var lectures: [Lecture]
     
     init(count: Int,

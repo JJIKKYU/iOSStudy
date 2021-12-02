@@ -3,7 +3,7 @@ import Foundation
 class KmoocListViewModel: NSObject {
     @IBOutlet var repository: KmoocRepository!
 
-    private var lectureList: LectureList = LectureListParse.EMPTY
+    public var lectureList: LectureList = LectureListParse.EMPTY
     
     var loading: Bool = false
     var loadingStarted: () -> Void = { }
@@ -31,10 +31,17 @@ class KmoocListViewModel: NSObject {
     }
 
     func next() {
-        repository.next(currentPage: lectureList) {
-            var lectureList = $0
-            lectureList.lectures.insert(contentsOf: self.lectureList.lectures, at: 0)
-            self.lectureList = lectureList
+        if loading { return }
+        loading = true
+        
+        let curLectureList = self.lectureList
+        
+        repository.next(currentPage: lectureList) { [weak self] lectureList in
+        
+            self?.lectureList = lectureList
+            self?.lectureList.lectures.insert(contentsOf: curLectureList.lectures, at: 0)
+            self?.lectureListUpdated()
+            self?.loading = false
         }
     }
 }
