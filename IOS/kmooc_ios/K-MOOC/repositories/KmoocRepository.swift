@@ -15,7 +15,11 @@ class KmoocRepository: NSObject {
                            params: ["serviceKey": serviceKey, "Mobile": 1]
         ) { result in
             if let json = try? result.get() {
-                completed(LectureList.EMPTY)
+                let data = json.data(using: .utf8)!
+                let jsonObject = try! JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
+                let lectureList = LectureListParse().parseLectureList(jsonObejct: jsonObject)
+                
+                completed(lectureList)
             }
         }
     }
@@ -24,7 +28,7 @@ class KmoocRepository: NSObject {
         let nextPageUrl = currentPage.next
         httpClient.getJson(path: nextPageUrl, params: [:]) { result in
             if let json = try? result.get() {
-                completed(LectureList.EMPTY)
+                completed(LectureListParse.EMPTY)
             }
         }
     }
