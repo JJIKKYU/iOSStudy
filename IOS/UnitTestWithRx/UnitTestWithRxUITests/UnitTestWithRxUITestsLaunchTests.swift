@@ -1,13 +1,13 @@
 //
-//  Tests_iOSLaunchTests.swift
-//  Tests iOS
+//  UnitTestWithRxUITestsLaunchTests.swift
+//  UnitTestWithRxUITests
 //
 //  Created by 정진균 on 2021/12/03.
 //
 
 import XCTest
 
-class Tests_iOSLaunchTests: XCTestCase {
+class UnitTestWithRxUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
