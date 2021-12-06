@@ -11,6 +11,7 @@ import RxCocoa
 
 class ViewController: UIViewController {
     
+    private let apiCalling = APICalling()
     private let viewModel = ViewModel()
     private var disposeBag = DisposeBag()
     
@@ -22,6 +23,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        /*
         searchBar
             .rx.text
             .orEmpty
@@ -33,6 +35,17 @@ class ViewController: UIViewController {
                 self?.tableView.reloadData()
             })
             .disposed(by: disposeBag)
+ */
+        
+        let request = APIRequest()
+        let result: Observable<[CountryListModel]> = apiCalling.send(apiRequest: request)
+        
+        _ = result
+            .bind(to: tableView.rx.items(cellIdentifier: "cityPrototypeCell")) { (row, model, cell) in
+                cell.textLabel?.text = model.name
+            }
+            .disposed(by: disposeBag)
+        
     }
 
 
@@ -42,13 +55,13 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return viewModel.shownCities.count
+        return 0
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cityPrototypeCell", for: indexPath)
-        cell.textLabel?.text = viewModel.shownCities[indexPath.row]
+//        cell.textLabel?.text = viewModel.shownCities[indexPath.row]
         
         return cell
     }
