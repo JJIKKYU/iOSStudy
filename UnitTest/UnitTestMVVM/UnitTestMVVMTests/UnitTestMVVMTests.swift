@@ -55,6 +55,7 @@ class CounterTests: XCTestCase {
                                                   subtractAction: subtractSubject.asObservable()))
     }
 
+    /*
     func testCountedValue() {
         scheduler.createColdObservable(
             [
@@ -84,6 +85,7 @@ class CounterTests: XCTestCase {
                 ]
             ))
     }
+    */
     
     func testNewCountedValueWithAPI() {
         scheduler.createColdObservable(
