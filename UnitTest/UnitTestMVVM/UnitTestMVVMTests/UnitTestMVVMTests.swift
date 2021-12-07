@@ -6,28 +6,59 @@
 //
 
 import XCTest
+import RxSwift
+import RxTest
+import RxNimble
+import Nimble
 @testable import UnitTestMVVM
 
-class UnitTestMVVMTests: XCTestCase {
+class CounterTests: XCTestCase {
+    
+    var viewModel: CounterViewModel!
+    var output: CounterViewModel.Output!
+    var scheduler: TestScheduler!
+    var disposeBag: DisposeBag!
+    
+    var plusSubject: PublishSubject<Void>!
+    var subtractSubject: PublishSubject<Void>!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        scheduler = TestScheduler(initialClock: 0)
+        disposeBag = DisposeBag()
+        plusSubject = PublishSubject<Void>()
+        subtractSubject = PublishSubject<Void>()
+        viewModel = CounterViewModel()
+        output = viewModel.transform(input: .init(plusAction: plusSubject.asObservable(),
+                                                  subtractAction: subtractSubject.asObservable()))
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    func testCountedValue() {
+        scheduler.createColdObservable(
+            [
+                .next(10, ()),
+                .next(20, ()),
+                .next(30, ())
+            ]
+        ).bind(to: plusSubject)
+        .disposed(by: disposeBag)
+        
+        scheduler.createColdObservable(
+            [
+                .next(25, ())
+            ]
+        ).bind(to: subtractSubject)
+        .disposed(by: disposeBag)
+        
+        expect(self.output.countedValue)
+            .events(scheduler: scheduler, disposeBag: disposeBag)
+            .to(equal(
+                [
+                    .next(0, 0),
+                    .next(10, 1),
+                    .next(20, 2),
+                    .next(25, 1),
+                    .next(30, 2)
+                ]
+            ))
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
