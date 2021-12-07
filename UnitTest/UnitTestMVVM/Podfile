@@ -7,6 +7,7 @@ target 'UnitTestMVVM' do
   use_frameworks!
   pod 'RxSwift'
   pod 'RxCocoa'
+  pod 'Moya/RxSwift'
 
   # Pods for UnitTestMVVM
 

@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Moya
 
 protocol ViewModelType: AnyObject {
     associatedtype Input
@@ -19,8 +20,10 @@ protocol ViewModelType: AnyObject {
 final class CounterViewModel: ViewModelType {
     
     let disposeBag = DisposeBag()
+    var provider = MoyaProvider<CounterAPI>()
     
     struct Input {
+        var refresh: Observable<Void>
         var plusAction: Observable<Void>
         var subtractAction: Observable<Void>
     }
@@ -31,6 +34,20 @@ final class CounterViewModel: ViewModelType {
     
     func transform(input: Input) -> Output {
         let countedValue = BehaviorRelay(value: 0)
+        
+        let counterObservable = input.refresh
+            .flatMapLatest { [provider] _ in
+                provider.rx.request(.init())
+            }
+            .map(CounterDataModel.self)
+            .share()
+        
+        counterObservable
+            .map { $0.counterDefaultValue }
+            .subscribe(onNext: { defaultValue in
+                countedValue.accept(defaultValue)
+            })
+            .disposed(by: disposeBag)
         
         input.plusAction
             .subscribe(onNext: { _ in

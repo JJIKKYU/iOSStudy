@@ -20,6 +20,7 @@
 		FC240379275EE14B0059ABED /* UnitTestMVVMUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC240378275EE14B0059ABED /* UnitTestMVVMUITests.swift */; };
 		FC4CC393275EE32A008DE822 /* CounterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4CC392275EE32A008DE822 /* CounterViewModel.swift */; };
 		FC4CC396275EE43F008DE822 /* CounterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC4CC395275EE43F008DE822 /* CounterViewController.swift */; };
+		FCCF1100275EEB0700D7593C /* Counter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCF10FF275EEB0700D7593C /* Counter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		FC24037A275EE14B0059ABED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC4CC392275EE32A008DE822 /* CounterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewModel.swift; sourceTree = "<group>"; };
 		FC4CC395275EE43F008DE822 /* CounterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterViewController.swift; sourceTree = "<group>"; };
+		FCCF10FF275EEB0700D7593C /* Counter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Counter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 			children = (
 				FC4CC392275EE32A008DE822 /* CounterViewModel.swift */,
 				FC4CC395275EE43F008DE822 /* CounterViewController.swift */,
+				FCCF10FF275EEB0700D7593C /* Counter.swift */,
 			);
 			path = Counter;
 			sourceTree = "<group>";
@@ -440,6 +443,7 @@
 			files = (
 				FC4CC396275EE43F008DE822 /* CounterViewController.swift in Sources */,
 				FC24035B275EE1490059ABED /* ViewController.swift in Sources */,
+				FCCF1100275EEB0700D7593C /* Counter.swift in Sources */,
 				FC4CC393275EE32A008DE822 /* CounterViewModel.swift in Sources */,
 				FC240357275EE1490059ABED /* AppDelegate.swift in Sources */,
 				FC240359275EE1490059ABED /* SceneDelegate.swift in Sources */,

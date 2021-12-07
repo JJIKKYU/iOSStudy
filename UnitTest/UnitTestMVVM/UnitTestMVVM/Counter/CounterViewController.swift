@@ -17,7 +17,8 @@ class CounterViewController: UIViewController {
     var disposeBag = DisposeBag()
     let viewModel = CounterViewModel()
     
-    private lazy var input = CounterViewModel.Input(plusAction: plusBtn.rx.tap.asObservable(),
+    private lazy var input = CounterViewModel.Input(refresh: .just(()),
+                                                    plusAction: plusBtn.rx.tap.asObservable(),
                                                     subtractAction: subtractBtn.rx.tap.asObservable())
     private lazy var output = viewModel.transform(input: input)
 
