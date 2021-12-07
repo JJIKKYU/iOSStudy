@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'UnitTestMVVM' do
+  # Comment the next line if you don't want to use dynamic frameworks
+
+  use_frameworks!
+  pod 'RxSwift'
+  pod 'RxCocoa'
+
+  # Pods for UnitTestMVVM
+
+  target 'UnitTestMVVMTests' do
+    inherit! :search_paths
+
+    pod 'RxTest'
+    pod 'RxNimble/RxTest'
+
+    # Pods for testing
+  end
+
+  target 'UnitTestMVVMUITests' do
+    # Pods for testing
+  end
+
+end
