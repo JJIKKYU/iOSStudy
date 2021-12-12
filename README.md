@@ -25,6 +25,12 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 - 화해에서 왜 Travis에서 Jenkins로 변경했는지 의사결정 과정이 나타난 포스팅입니다.
 - 어떻게 구축했는지 자세하게 작성 해놓은 것이 특징입니다.
 
+## Design System
+
+### (Banksalad Product Language를 소개합니다)[https://blog.banksalad.com/tech/banksalad-product-language-ios/]
+- 개인적으로 서비스별 디자인 시스템을 어떻게 구축했는지 관심이 굉장히 많은 편인데, 구축하고자 했던 히스토리부터 실제 아웃풋까지 확인할 수 있어서 인상 깊었던 포스팅입니다.
+- 사이드 프로젝트에서 적용해보고 싶은 욕구가 굉장히 많이 생기네요!  
+
 
 ## CoreGraphics
 
