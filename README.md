@@ -40,6 +40,7 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 ### [SwiftUI의 방식으로 UIKit코드를 짜는 방법: Layout Driven UI](https://www.sungdoo.dev/programming/layout-driven-ui)
 - 디자인 시스템 코드 작성을 시작하면서 몇가지 고민을 단번에 해결해주었던 포스팅입니다.
 - 아직 iOS13 이상을 지원하기는 힘든 경우 SwiftUI 쓰기가 힘든 상황에, UIKit을 사용하면서 데이터를 더욱 효과적으로 컨트롤할 수 있는 방법을 제시해주고 있습니다. 
+- 새로운 사이드 프로젝트에 직접 적용하고 후기를 작성할 예정입니다.
 
 
 ## CoreGraphics
