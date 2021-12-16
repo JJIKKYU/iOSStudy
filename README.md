@@ -25,6 +25,11 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 - 화해에서 왜 Travis에서 Jenkins로 변경했는지 의사결정 과정이 나타난 포스팅입니다.
 - 어떻게 구축했는지 자세하게 작성 해놓은 것이 특징입니다.
 
+### [Fastlane 으로 iOS 배포를 쉽게 하자! - Fastlane 이란?](https://hyesunzzang.tistory.com/160)
+### [Fastlane 으로 iOS 배포를 쉽게 하자! - Screenshots](https://hyesunzzang.tistory.com/161)
+### [FastLane Snapshot으로 배포용 스크린샷 자동으로 만들기 - iOS Tech Talk](https://academy.realm.io/kr/posts/automate-ios-screenshots-with-fastlane-snapshot/)
+- 처음 앱을 출시할 때, XCode에서 단계별로 하나하나 기다리면서 졸았던 적이 있습니다. 원하는 날짜에 출시하기 위해서 1분 1초가 중요한 상황이었는데 큰일날 뻔 했었죠. 다음 프로젝트에서는 Fastlane을 적용해서 배포까지의 경험을 대폭 개선하고 싶다는 생각이 들었습니다.
+
 ## Design System
 
 ### [Banksalad Product Language를 소개합니다](https://blog.banksalad.com/tech/banksalad-product-language-ios/)
