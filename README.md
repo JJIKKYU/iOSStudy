@@ -7,6 +7,10 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 ### [RxSwift vs Combine - 스펙 / 성능 / 개념 비교](https://eunjin3786.tistory.com/67)
 - iOS13 이후부터 사용 가능한 Combine과 RxSwift를 비교하고 있는 아티클
 
+### [[RxSwift]Observable과 Driver](http://minsone.github.io/programming/reactive-swift-observable-vs-driver)
+
+### [[RxSwift] Share(replay:)](https://jusung.github.io/shareReplay/)
+
 ## UnitTest
 
 ### [힐페TV - ViewModel을 무조건 믿을 수 있는 방법이 있다???(삐슝빠슝)](https://blog.gangnamunni.com/post/HealingPaperTV-ViewModel-Test/)
