@@ -40,6 +40,11 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 - 너무 멋있는 회사.. 이렇게 디자인 해주시는 디자이너분들 사이에서 개발하면 입꼬리가 올라갈 것 같습니다.
 - 디자인 시스템을 어떻게 하면 디자이너와 커뮤니케이션 코스트를 줄이면서 코드화 할 수 있을지 더욱 고민해야 할 것 같습니다.
 
+## Design Pattern
+
+### [MVC 디자인 패턴 in iOS](https://velog.io/@ictechgy/MVC-디자인-패턴)
+- 실제로 앱 개발을 하면서 MVC를 적용한 적은 없지만, MVC가 가지고 있는 장단점을 공부해야 이후의 디자인 패턴 등장 이유에 대해 더욱 깊게 이해할 수 있다고 생각합니다.
+
 ## UI
 
 ### [SwiftUI의 방식으로 UIKit코드를 짜는 방법: Layout Driven UI](https://www.sungdoo.dev/programming/layout-driven-ui)
