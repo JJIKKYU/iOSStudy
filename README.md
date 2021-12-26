@@ -13,6 +13,10 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 
 ### [[RxSwift] 2. Observables](https://ios-development.tistory.com/97?category=916618)
 
+## Swift
+
+### [[Swift]Map, Filter, Reduce 그리고 추론](http://minsone.github.io/mac/ios/swift-map-filter-reduce-and-inference)
+
 ## UnitTest
 
 ### [힐페TV - ViewModel을 무조건 믿을 수 있는 방법이 있다???(삐슝빠슝)](https://blog.gangnamunni.com/post/HealingPaperTV-ViewModel-Test/)
