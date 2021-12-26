@@ -17,6 +17,9 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 
 ### [[Swift]Map, Filter, Reduce 그리고 추론](http://minsone.github.io/mac/ios/swift-map-filter-reduce-and-inference)
 
+### [Swift - map,filter,reduce(고차함수)란 무엇일까?](https://minosaekki.tistory.com/21)
+- map, filter, reduce에 대해서 모호했던 개념을 정확하게 잡게 도와준 글입니다.
+
 ## UnitTest
 
 ### [힐페TV - ViewModel을 무조건 믿을 수 있는 방법이 있다???(삐슝빠슝)](https://blog.gangnamunni.com/post/HealingPaperTV-ViewModel-Test/)
