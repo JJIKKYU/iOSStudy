@@ -1,4 +1,4 @@
-# iOS Study Repo
+# iOS Study
 
 IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 기록하는 저장소입니다.
 
