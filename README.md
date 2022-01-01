@@ -62,7 +62,7 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 ## Design Pattern / Arch
 
 ### [MVC 디자인 패턴 in iOS](https://velog.io/@ictechgy/MVC-디자인-패턴)
-- 실제로 앱 개발을 하면서 MVC를 적용한 적은 없지만, MVC가 가지고 있는 장단점을 공부해야 이후의 디자인 패턴 등장 이유에 대해 더욱 깊게 이해할 수 있다고 생각합니다.
+- 실제로 앱 개발을 하면서 MVC를 적용한 적은 없지만, MVC가 가지고 있는 장단점을 공부해야 이후의 디자인 패턴 등장 이유에 대해 더욱 깊게 이해할 수 있다고 생각합니다. 
 
 ### [[iOS][RxSwift] Input과 Output을 사용한 MVVM 아키텍처](https://mildwhale.github.io/2020-04-16-mvvm-with-input-output/)
 - Input/Output을 정의하지 않고 NVVM을 사용했는데 시간이 지날수록 ViewModel에 정의된 변수들이 어떤것이 Input이고 Output인지 혼동되는 경우가 많았는데, 이를 통해서 어느정도(?) 해결할 수 있다는 생각이 들었다.
