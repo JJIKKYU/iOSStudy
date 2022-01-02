@@ -1,4 +1,4 @@
-# iOS Study Repo
+# iOS Study
 
 IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 기록하는 저장소입니다.
 
@@ -10,6 +10,17 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 ### [[RxSwift]Observable과 Driver](http://minsone.github.io/programming/reactive-swift-observable-vs-driver)
 
 ### [[RxSwift] Share(replay:)](https://jusung.github.io/shareReplay/)
+
+### [[RxSwift] 2. Observables](https://ios-development.tistory.com/97?category=916618)
+
+## Swift
+
+### [[Swift]Map, Filter, Reduce 그리고 추론](http://minsone.github.io/mac/ios/swift-map-filter-reduce-and-inference)
+
+### [Swift - map,filter,reduce(고차함수)란 무엇일까?](https://minosaekki.tistory.com/21)
+- map, filter, reduce에 대해서 모호했던 개념을 정확하게 잡게 도와준 글입니다.
+
+### [Computed Property(연산 프로퍼티)란 무엇일까?](https://minosaekki.tistory.com/4?category=815670)
 
 ## UnitTest
 
@@ -34,6 +45,10 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 ### [FastLane Snapshot으로 배포용 스크린샷 자동으로 만들기 - iOS Tech Talk](https://academy.realm.io/kr/posts/automate-ios-screenshots-with-fastlane-snapshot/)
 - 처음 앱을 출시할 때, XCode에서 단계별로 하나하나 기다리면서 졸았던 적이 있습니다. 원하는 날짜에 출시하기 위해서 1분 1초가 중요한 상황이었는데 큰일날 뻔 했었죠. 다음 프로젝트에서는 Fastlane을 적용해서 배포까지의 경험을 대폭 개선하고 싶다는 생각이 들었습니다.
 
+## 의존성 주입
+### [Dependency) 의존성 관리란?](https://velog.io/@hansangjin96/Swinject-의존성-관리란)
+- 의존성 역전에 대해서 공부하면서 정확하게 이해가 되지 않았는데, 단계별로 어떻게 의존성 역전을 하게 되는지 쉽게 따라갈 수 있는 포스팅입니다.
+
 ## Design System
 
 ### [Banksalad Product Language를 소개합니다](https://blog.banksalad.com/tech/banksalad-product-language-ios/)
@@ -50,7 +65,7 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 ## Design Pattern / Arch
 
 ### [MVC 디자인 패턴 in iOS](https://velog.io/@ictechgy/MVC-디자인-패턴)
-- 실제로 앱 개발을 하면서 MVC를 적용한 적은 없지만, MVC가 가지고 있는 장단점을 공부해야 이후의 디자인 패턴 등장 이유에 대해 더욱 깊게 이해할 수 있다고 생각합니다.
+- 실제로 앱 개발을 하면서 MVC를 적용한 적은 없지만, MVC가 가지고 있는 장단점을 공부해야 이후의 디자인 패턴 등장 이유에 대해 더욱 깊게 이해할 수 있다고 생각합니다. 
 
 ### [[iOS][RxSwift] Input과 Output을 사용한 MVVM 아키텍처](https://mildwhale.github.io/2020-04-16-mvvm-with-input-output/)
 - Input/Output을 정의하지 않고 NVVM을 사용했는데 시간이 지날수록 ViewModel에 정의된 변수들이 어떤것이 Input이고 Output인지 혼동되는 경우가 많았는데, 이를 통해서 어느정도(?) 해결할 수 있다는 생각이 들었다.
@@ -62,6 +77,9 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 - 아직 iOS13 이상을 지원하기는 힘든 경우 SwiftUI 쓰기가 힘든 상황에, UIKit을 사용하면서 데이터를 더욱 효과적으로 컨트롤할 수 있는 방법을 제시해주고 있습니다. 
 - 새로운 사이드 프로젝트에 직접 적용하고 후기를 작성할 예정입니다.
 
+## Git
+
+### [Git 사용 중 자주 만나는 이슈 관리](https://parksb.github.io/article/28.html)
 
 ## CoreGraphics
 
