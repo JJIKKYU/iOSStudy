@@ -44,6 +44,9 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 - 너무 멋있는 회사.. 이렇게 디자인 해주시는 디자이너분들 사이에서 개발하면 입꼬리가 올라갈 것 같습니다.
 - 디자인 시스템을 어떻게 하면 디자이너와 커뮤니케이션 코스트를 줄이면서 코드화 할 수 있을지 더욱 고민해야 할 것 같습니다.
 
+### [Building a Design System for iOS - Part 2 - Typography](https://www.ramshandilya.com/blog/design-system-typography/)
+### [Building a Design System for iOS - Part 3 - Colors](https://www.ramshandilya.com/blog/design-system-colors/)
+
 ## Design Pattern / Arch
 
 ### [MVC 디자인 패턴 in iOS](https://velog.io/@ictechgy/MVC-디자인-패턴)
