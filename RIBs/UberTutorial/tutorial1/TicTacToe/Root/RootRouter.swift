@@ -23,6 +23,7 @@ protocol RootInteractable: Interactable, LoggedOutListener {
 
 protocol RootViewControllable: ViewControllable {
     func present(viewController: ViewControllable)
+    func dismiss(viewcontroller: ViewControllable)
 }
 
 final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, RootRouting {
@@ -48,7 +49,15 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
     }
     
     func routeToLoggedIn(withPlayer1Name player1Name: String, player2Name: String) {
-        <#code#>
+        // Detech LoggedOut RIB
+        if let loggedOut = self.loggedOut {
+            detachChild(loggedOut)
+            viewController.dismiss(viewcontroller: loggedOut.viewControllable)
+            self.loggedOut = nil
+        }
+        
+        let loggedIn = loggedInBuilder.build(withListener: interactor)
+        attachChild(loggedIn)
     }
 
     // MARK: - Private
