@@ -12,6 +12,9 @@
 		981578972781757600B7321E /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981578932781757600B7321E /* LoggedOutViewController.swift */; };
 		981578982781757600B7321E /* LoggedOutBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981578942781757600B7321E /* LoggedOutBuilder.swift */; };
 		981578992781757600B7321E /* LoggedOutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981578952781757600B7321E /* LoggedOutInteractor.swift */; };
+		981578A627817FEB00B7321E /* LoggedInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981578A327817FEB00B7321E /* LoggedInRouter.swift */; };
+		981578A727817FEB00B7321E /* LoggedInBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981578A427817FEB00B7321E /* LoggedInBuilder.swift */; };
+		981578A827817FEB00B7321E /* LoggedInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981578A527817FEB00B7321E /* LoggedInInteractor.swift */; };
 		AEFA38604D7D1E4A08E9A7FA /* Pods_TicTacToe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B99EABB5C8D25341027C05C5 /* Pods_TicTacToe.framework */; };
 		E9CB1D521F97303800D84847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB1D351F972FD500D84847 /* AppDelegate.swift */; };
 		E9CB1D531F97305A00D84847 /* AppComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB1D341F972FD500D84847 /* AppComponent.swift */; };
@@ -29,6 +32,9 @@
 		981578932781757600B7321E /* LoggedOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
 		981578942781757600B7321E /* LoggedOutBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutBuilder.swift; sourceTree = "<group>"; };
 		981578952781757600B7321E /* LoggedOutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedOutInteractor.swift; sourceTree = "<group>"; };
+		981578A327817FEB00B7321E /* LoggedInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInRouter.swift; sourceTree = "<group>"; };
+		981578A427817FEB00B7321E /* LoggedInBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInBuilder.swift; sourceTree = "<group>"; };
+		981578A527817FEB00B7321E /* LoggedInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInInteractor.swift; sourceTree = "<group>"; };
 		A791EBDAD202886E66137B9C /* Pods-TicTacToe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe.release.xcconfig"; path = "Pods/Target Support Files/Pods-TicTacToe/Pods-TicTacToe.release.xcconfig"; sourceTree = "<group>"; };
 		B99EABB5C8D25341027C05C5 /* Pods_TicTacToe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TicTacToe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9894B4A1F972CC500688FCB /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +77,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		9815789A27817FAD00B7321E /* LoggedIn */ = {
+			isa = PBXGroup;
+			children = (
+				981578A327817FEB00B7321E /* LoggedInRouter.swift */,
+				981578A427817FEB00B7321E /* LoggedInBuilder.swift */,
+				981578A527817FEB00B7321E /* LoggedInInteractor.swift */,
+			);
+			path = LoggedIn;
+			sourceTree = "<group>";
+		};
 		E9894B411F972CC500688FCB = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +108,7 @@
 		E9894B4C1F972CC500688FCB /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
+				9815789A27817FAD00B7321E /* LoggedIn */,
 				7EDD59511FA135E9005EC8B2 /* Resources */,
 				E9CB1D331F972FD500D84847 /* AppStart */,
 				E9CB1D421F972FE400D84847 /* LoggedOut */,
@@ -257,12 +274,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				981578992781757600B7321E /* LoggedOutInteractor.swift in Sources */,
+				981578A627817FEB00B7321E /* LoggedInRouter.swift in Sources */,
 				E9CB1D521F97303800D84847 /* AppDelegate.swift in Sources */,
 				E9CB1D641F9730EF00D84847 /* RootInteractor.swift in Sources */,
 				981578982781757600B7321E /* LoggedOutBuilder.swift in Sources */,
+				981578A827817FEB00B7321E /* LoggedInInteractor.swift in Sources */,
 				E9CB1D631F9730EF00D84847 /* RootComponent+LoggedOut.swift in Sources */,
 				981578962781757600B7321E /* LoggedOutRouter.swift in Sources */,
 				E9CB1D611F9730EF00D84847 /* RootBuilder.swift in Sources */,
+				981578A727817FEB00B7321E /* LoggedInBuilder.swift in Sources */,
 				E9CB1D531F97305A00D84847 /* AppComponent.swift in Sources */,
 				E9CB1D651F9730EF00D84847 /* RootRouter.swift in Sources */,
 				981578972781757600B7321E /* LoggedOutViewController.swift in Sources */,

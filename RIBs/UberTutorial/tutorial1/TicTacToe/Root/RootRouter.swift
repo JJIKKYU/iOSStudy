@@ -29,7 +29,10 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
 
     init(interactor: RootInteractable,
          viewController: RootViewControllable,
-         loggedOutBuilder: LoggedOutBuildable) {
+         loggedOutBuilder: LoggedOutBuildable,
+         loggedInBuilder: LoggedInBuildable
+    ) {
+        self.loggedInBuilder = loggedInBuilder
         self.loggedOutBuilder = loggedOutBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.router = self
@@ -43,10 +46,14 @@ final class RootRouter: LaunchRouter<RootInteractable, RootViewControllable>, Ro
         attachChild(loggedOut)
         viewController.present(viewController: loggedOut.viewControllable)
     }
+    
+    func routeToLoggedIn(withPlayer1Name player1Name: String, player2Name: String) {
+        <#code#>
+    }
 
     // MARK: - Private
 
     private let loggedOutBuilder: LoggedOutBuildable
-
     private var loggedOut: ViewableRouting?
+    private let loggedInBuilder: LoggedInBuildable
 }
