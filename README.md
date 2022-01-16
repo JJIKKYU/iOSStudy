@@ -17,6 +17,8 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 
 ### [[RxSwift] Take](https://jusung.github.io/Take/)
 
+### [[RxSwift] withLatestFrom](https://jusung.github.io/withLatestFrom/)
+
 ## Swift
 
 ### [[Swift]Map, Filter, Reduce 그리고 추론](http://minsone.github.io/mac/ios/swift-map-filter-reduce-and-inference)
