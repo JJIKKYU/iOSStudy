@@ -15,7 +15,7 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 
 ### [RxSwift | Observable, Subject, Relay](https://unnnyong.me/2020/05/29/📝-rxswift-observable-subject-relay/)
 
-### [https://jusung.github.io/Take/](https://jusung.github.io/Take/)
+### [[RxSwift] Take](https://jusung.github.io/Take/)
 
 ## Swift
 
