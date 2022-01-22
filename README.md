@@ -32,6 +32,9 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 
 ### [Computed Property(연산 프로퍼티)란 무엇일까?](https://minosaekki.tistory.com/4?category=815670)
 
+### [[Swift] async / await & concurrency](https://sujinnaljin.medium.com/swift-async-await-concurrency-bd7bcf34e26f)
+- Swift 5.5부터 사용 가능한 async / await에 대해서 자세히 포스팅한 글입니다.
+
 ## UnitTest
 
 ### [힐페TV - ViewModel을 무조건 믿을 수 있는 방법이 있다???(삐슝빠슝)](https://blog.gangnamunni.com/post/HealingPaperTV-ViewModel-Test/)
