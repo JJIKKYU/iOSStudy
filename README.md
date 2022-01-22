@@ -35,6 +35,9 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 ### [[Swift] async / await & concurrency](https://sujinnaljin.medium.com/swift-async-await-concurrency-bd7bcf34e26f)
 - Swift 5.5부터 사용 가능한 async / await에 대해서 자세히 포스팅한 글입니다.
 
+### [Swift - async / await & async let 기초](https://jinsangjin.tistory.com/147)
+- async let에 대한 활용 방법에 대해서 간단하게 포스팅한 글입니다.
+
 ## UnitTest
 
 ### [힐페TV - ViewModel을 무조건 믿을 수 있는 방법이 있다???(삐슝빠슝)](https://blog.gangnamunni.com/post/HealingPaperTV-ViewModel-Test/)
