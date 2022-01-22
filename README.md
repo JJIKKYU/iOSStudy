@@ -19,7 +19,7 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 
 ### [[RxSwift] withLatestFrom](https://jusung.github.io/withLatestFrom/)
 
-### [https://jusung.github.io/scan/](https://jusung.github.io/scan/)
+### [[RxSwift] Scan](https://jusung.github.io/scan/)
 
 ### [[iOS] [Swift] RxSwift Observable & Observer, Disposable](https://duwjdtn11.tistory.com/625)
 
