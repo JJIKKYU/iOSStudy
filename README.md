@@ -97,6 +97,10 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 
 ### [Git 사용 중 자주 만나는 이슈 관리](https://parksb.github.io/article/28.html)
 
+## RIBs
+
+### [RIBs Flattening](https://velog.io/@frankjinhan/RIBs-Flattening)
+
 ## CoreGraphics
 
 ## Network
