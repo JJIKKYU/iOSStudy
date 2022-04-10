@@ -107,6 +107,8 @@ IOS 개발 및 웹, 자료구조, 알고리즘 등 원하는 공부를 하며 �
 
 ### [Realm의 특징과 사용 방법](https://velog.io/@dlskawns96/Swift-Realm의-특징과-사용법)
 
+### [[iOS] Realm (4) 이미지 사용하기](https://velog.io/@hope1053/iOS-Realm-4-이미지-사용하기)
+
 ## CoreGraphics
 
 ## Network
